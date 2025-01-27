@@ -1,0 +1,10 @@
+[
+  {
+    "listing": "/blog-listing.html",
+    "items": [
+      "/posts/welcome/index.html",
+      "/posts/starwars/starwars_df.html",
+      "/posts/post-with-code/index.html"
+    ]
+  }
+]
