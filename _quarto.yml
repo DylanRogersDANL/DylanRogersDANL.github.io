@@ -3,16 +3,26 @@ project:
   output-dir: "." 
 
 website:
-  title: "YOUR NAME"
+  title: "Dylan Rogers"
   navbar:
     # background: "#1c4982"
     pinned: true
     left:
       - text: Blog
         href: blog-listing.qmd
+        
+      - text: Project
+        href: danl_proj_nba.ipynb
+        
+      - text: "Python Data Analysis"
+        menu:
+          - text: Pandas
+            href: pandas_basics.ipynb
+          - text: Seaborn Basic
+            href: seaborn_basics.ipynb
             
   page-footer: 
-    center: "Powered with GitHub, Quarto, and Jupyter Notebook<br>© YOUR NAME, 2025"
+    center: "Powered with GitHub, Quarto, and Jupyter Notebook<br>© Dylan Rogers, 2025"
 
 format:
   html:

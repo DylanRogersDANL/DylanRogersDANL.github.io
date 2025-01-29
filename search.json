@@ -1,10 +1,94 @@
 [
   {
-    "objectID": "blog-listing.html",
-    "href": "blog-listing.html",
-    "title": "Insightful Analytics",
+    "objectID": "danl_proj_nba.html#salary-distribution-among-teams",
+    "href": "danl_proj_nba.html#salary-distribution-among-teams",
+    "title": "Data Analysis Project",
+    "section": "Salary Distribution Among Teams",
+    "text": "Salary Distribution Among Teams\nLet’s start with the salary distribution among teams using seaborn for visualization. ​​\n\n\n# Handle missing values in 'Salary' by replacing them with the median salary\nmedian_salary = nba['Salary'].median()\nnba['Salary'].fillna(median_salary, inplace=True)\n\n/var/folders/_m/d6jf0jhd2zzdfd5kzdhl_24w0000gn/T/ipykernel_79892/1671011424.py:3: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.\nThe behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.\n\nFor example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.\n\n\n  nba['Salary'].fillna(median_salary, inplace=True)\n\n\n\n# Set the aesthetic style of the plots\nsns.set_style(\"whitegrid\")\n\n# Calculate total salary by team\nteam_salary = (\n    nba\n    .groupby('Team')['Salary']\n    .sum()\n    .reset_index()\n    .sort_values(by='Salary', ascending=False)\n)\n\n# Plot total salary by team\nplt.figure(figsize=(10, 16))\nsns.barplot(data = team_salary,\n            x = 'Salary', y = 'Team',\n            palette = 'coolwarm')\nplt.title('Total Salary Distribution Among NBA Teams')\nplt.xlabel('Total Salary')\nplt.ylabel('Team')\nplt.xticks(rotation=45)\nplt.show()\n\n\n\n\n\n\n\n\nThe visualization above displays the total salary distribution among NBA teams, with teams sorted by their total salary expenditure. This bar plot reveals which teams are the biggest spenders on player salaries and which are more conservative. The color gradient provides a visual cue to easily distinguish between the higher and lower spending teams.\nNotice that Portland Trail Blazers has the highest total salary followed by Golden State Warriors and Philadelphia 76ers, and Memphis Grizzlies has the lowest total salary."
+  },
+  {
+    "objectID": "danl_proj_nba.html#player-age-distribution",
+    "href": "danl_proj_nba.html#player-age-distribution",
+    "title": "Data Analysis Project",
+    "section": "Player Age Distribution",
+    "text": "Player Age Distribution\nNext, let’s explore the Player Age Distribution across the NBA. We’ll create a histogram to visualize how player ages are distributed, which will help us understand if the league trends younger, older, or has a balanced age mix. ​​\n\n# Convert 'Birthday' column to datetime format\nfrom dateutil import parser\n# nba['Birthday'] = nba['Birthday'].apply(lambda x: parser.parse(x))\n\n# Now, let's calculate the age of each player\n# nba['Age'] = (datetime.now() - nba['Birthday']).dt.days // 365\n\n# Plot the age distribution of NBA players\nplt.figure(figsize=(10, 6))\nsns.histplot(nba['Age'],\n             bins = 15,\n             kde = True,\n             color = 'skyblue')\nplt.title('Age Distribution of NBA Players')\nplt.xlabel('Age')\nplt.ylabel('Count')\nplt.show()\n\n\n/Users/bchoe/anaconda3/lib/python3.11/site-packages/seaborn/_oldcore.py:1119: FutureWarning: use_inf_as_na option is deprecated and will be removed in a future version. Convert inf values to NaN before operating instead.\n  with pd.option_context('mode.use_inf_as_na', True):\n\n\n\n\n\n\n\n\n\nThe histogram above shows the age distribution of NBA players, with a kernel density estimate (KDE) overlay to indicate the distribution shape. The plot helps identify the common ages for NBA players and whether there are significant numbers of very young or older players.\nNotice that the majority of players fall within an age range from 24 to 34. There are few players whose age is above 40."
+  },
+  {
+    "objectID": "danl_proj_nba.html#position-wise-salary-insights",
+    "href": "danl_proj_nba.html#position-wise-salary-insights",
+    "title": "Data Analysis Project",
+    "section": "Position-wise Salary Insights",
+    "text": "Position-wise Salary Insights\nMoving on to Position-wise Salary Insights, we’ll examine how average salaries differ across player positions. This analysis could reveal which positions are typically higher-paid, potentially reflecting their value on the basketball court. Let’s create a box plot to visualize the salary distribution for each position. ​​\n\n# Plot salary distribution by player position\nplt.figure(figsize=(10, 6))\nsns.boxplot(data = nba,\n            x = 'Position', y = 'Salary',\n            palette = 'Set2')\nplt.title('Salary Distribution by Position')\nplt.xlabel('Position')\nplt.ylabel('Salary')\nplt.show()\n\n\n\n\n\n\n\n\nThe box plot above illustrates the salary distribution by player position, showcasing the variation in salaries among different positions within the NBA. PG-SG has the highest median salary."
+  },
+  {
+    "objectID": "danl_proj_nba.html#top-10-highest-paid-players",
+    "href": "danl_proj_nba.html#top-10-highest-paid-players",
+    "title": "Data Analysis Project",
+    "section": "Top 10 Highest Paid Players",
+    "text": "Top 10 Highest Paid Players\nLastly, we’ll identify the Top 10 Highest Paid Players in the NBA. Let’s visualize this information.\n\n# Identify the top 10 highest paid players\ntop_10_salaries = nba.sort_values(by='Salary', ascending=False).head(10)\n\n# Plot the top 10 highest paid players\nplt.figure(figsize=(12, 8))\nsns.barplot(data = top_10_salaries,\n            x = 'Salary', y = 'PlayerName',\n            palette = 'viridis')\nplt.title('Top 10 Highest Paid NBA Players')\nplt.xlabel('Salary')\nplt.ylabel('Player')\nplt.show()\n\n\n\n\n\n\n\n\nThe bar plot above reveals the top 10 highest-paid NBA players, showcasing those who stand at the pinnacle of the league in terms of salary. This visualization not only highlights the star players who command the highest salaries but also may reflect their marketability, performance, and contribution to their respective teams."
+  },
+  {
+    "objectID": "pandas_basics.html#creating-a-series",
+    "href": "pandas_basics.html#creating-a-series",
+    "title": "Pandas Basics",
+    "section": "Creating a Series",
+    "text": "Creating a Series\n\n\n# Creating a Series from a list\ndata = [10, 20, 30, 40, 50]\nseries = pd.Series(data)\nseries\n\n\n\n\n\n\n\n\n0\n\n\n\n\n0\n10\n\n\n1\n20\n\n\n2\n30\n\n\n3\n40\n\n\n4\n50\n\n\n\n\ndtype: int64"
+  },
+  {
+    "objectID": "pandas_basics.html#creating-a-dataframe",
+    "href": "pandas_basics.html#creating-a-dataframe",
+    "title": "Pandas Basics",
+    "section": "Creating a DataFrame",
+    "text": "Creating a DataFrame\n\n\n# Creating a DataFrame from a dictionary\ndata = {\n    \"Name\": [\"Alice\", \"Bob\", \"Charlie\"],\n    \"Age\": [25, 30, 35],\n    \"City\": [\"New York\", \"Los Angeles\", \"Chicago\"]\n}\ndf = pd.DataFrame(data)\ndf\n\n\n  \n    \n\n\n\n\n\n\nName\nAge\nCity\n\n\n\n\n0\nAlice\n25\nNew York\n\n\n1\nBob\n30\nLos Angeles\n\n\n2\nCharlie\n35\nChicago"
+  },
+  {
+    "objectID": "pandas_basics.html#exploring-data",
+    "href": "pandas_basics.html#exploring-data",
+    "title": "Pandas Basics",
+    "section": "Exploring Data",
+    "text": "Exploring Data\n\n\n# Display the first few rows\ndf.head()\n\n# Display the shape of the DataFrame\nprint(\"Shape:\", df.shape)\n\n# Display summary statistics\ndf.describe()\n\nShape: (3, 3)\n\n\n\n  \n    \n\n\n\n\n\n\nAge\n\n\n\n\ncount\n3.0\n\n\nmean\n30.0\n\n\nstd\n5.0\n\n\nmin\n25.0\n\n\n25%\n27.5\n\n\n50%\n30.0\n\n\n75%\n32.5\n\n\nmax\n35.0"
+  },
+  {
+    "objectID": "pandas_basics.html#selecting-data",
+    "href": "pandas_basics.html#selecting-data",
+    "title": "Pandas Basics",
+    "section": "Selecting Data",
+    "text": "Selecting Data\n\n# Selecting a single column\ndf[\"Name\"]\n\n\n\n\n\n\n\n\nName\n\n\n\n\n0\nAlice\n\n\n1\nBob\n\n\n2\nCharlie\n\n\n\n\ndtype: object\n\n\n\n# Selecting multiple columns\ndf[[\"Name\", \"City\"]]\n\n\n  \n    \n\n\n\n\n\n\nName\nCity\n\n\n\n\n0\nAlice\nNew York\n\n\n1\nBob\nLos Angeles\n\n\n2\nCharlie\nChicago\n\n\n\n\n\n    \n\n  \n    \n\n  \n    \n  \n    \n\n  \n\n    \n  \n\n\n\n  \n\n\n    \n        \n    \n\n  \n\n\n\n  \n\n\n    \n  \n\n\n\n# Selecting rows by index\ndf.iloc[0]\n\n\n\n\n\n\n\n\n0\n\n\n\n\nName\nAlice\n\n\nAge\n25\n\n\nCity\nNew York\n\n\n\n\ndtype: object"
+  },
+  {
+    "objectID": "pandas_basics.html#filtering-data",
+    "href": "pandas_basics.html#filtering-data",
+    "title": "Pandas Basics",
+    "section": "Filtering Data",
+    "text": "Filtering Data\n\n# Filtering rows where Age is greater than 25\nfiltered_df = df[df[\"Age\"] &gt; 25]\nfiltered_df\n\n\n  \n    \n\n\n\n\n\n\nName\nAge\nCity\n\n\n\n\n1\nBob\n30\nLos Angeles\n\n\n2\nCharlie\n35\nChicago"
+  },
+  {
+    "objectID": "pandas_basics.html#adding-a-new-column",
+    "href": "pandas_basics.html#adding-a-new-column",
+    "title": "Pandas Basics",
+    "section": "Adding a New Column",
+    "text": "Adding a New Column\n\n\n# Adding a new column\ndf[\"Salary\"] = [50000, 60000, 70000]\ndf\n\n\n  \n    \n\n\n\n\n\n\nName\nAge\nCity\nSalary\n\n\n\n\n0\nAlice\n25\nNew York\n50000\n\n\n1\nBob\n30\nLos Angeles\n60000\n\n\n2\nCharlie\n35\nChicago\n70000\n\n\n\n\n\n    \n\n  \n    \n\n  \n    \n  \n    \n\n  \n\n    \n  \n\n\n\n  \n\n\n    \n        \n    \n\n  \n\n\n\n  \n\n\n  \n    \n    \n\n  \n    \n  \n    \n    \n  \n\n    \n  \n\n\n    ## Conclusion\n\n    This notebook covers the basic operations of pandas. You can explore more advanced features like merging,\n    joining, and working with time series data in pandas documentation: https://pandas.pydata.org/docs/"
+  },
+  {
+    "objectID": "seaborn_basics.html",
+    "href": "seaborn_basics.html",
+    "title": "Seaborn Example",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\n\n\nJan 22, 2025\n\n\nYOUR NAME\n\n\n1 min\n\n\n\n\n\n\n  \n\n\n\n\nStarwars\n\n\n\n\n\n\n\n\n\nJan 22, 2025\n\n\nYour Name\n\n\n3 min\n\n\n\n\n\n\n  \n\n\n\n\nPost With Code\n\n\n\n\n\n\n\n\n\nJan 22, 2025\n\n\nYOUR NAME\n\n\n1 min\n\n\n\n\n\n\nNo matching items"
+    "text": "import seaborn as sns\nimport matplotlib.pyplot as plt\nimport pandas as pd\n\n# Sample data\ndata = {\n    'Category': ['A', 'B', 'C', 'D'],\n    'Values': [23, 45, 56, 78]\n}\ndf = pd.DataFrame(data)\n\n# Create a barplot\nsns.set(style=\"whitegrid\")  # Optional: Set a clean grid style\nplt.figure(figsize=(8, 6))  # Set the figure size\nsns.barplot(data=df, x='Category', y='Values', palette='viridis')\n\n# Customize the plot\nplt.title(\"Bar Plot Example\", fontsize=16)\nplt.xlabel(\"Category\", fontsize=12)\nplt.ylabel(\"Values\", fontsize=12)\n\n# Show the plot\nplt.show()\n\nFutureWarning: \n\nPassing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.\n\n  sns.barplot(data=df, x='Category', y='Values', palette='viridis')"
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To My Blog",
+    "section": "",
+    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+  },
+  {
+    "objectID": "posts/post-with-code/index.html",
+    "href": "posts/post-with-code/index.html",
+    "title": "Post With Code",
+    "section": "",
+    "text": "This is a post with executable code with no space in the folder name.\n\n1 + 1\n\n[1] 2"
   },
   {
     "objectID": "posts/starwars/starwars_df.html",
@@ -28,38 +112,31 @@
     "text": "Human vs. Droid\n\nggplot(data = \n         starwars %&gt;% \n         filter(species %in% c(\"Human\", \"Droid\"))) +\n  geom_boxplot(aes(x = species, y = mass, \n                   fill = species),\n               show.legend = FALSE)"
   },
   {
-    "objectID": "posts/post-with-code/index.html",
-    "href": "posts/post-with-code/index.html",
-    "title": "Post With Code",
-    "section": "",
-    "text": "This is a post with executable code with no space in the folder name.\n\n1 + 1\n\n[1] 2"
-  },
-  {
-    "objectID": "posts/welcome/index.html",
-    "href": "posts/welcome/index.html",
-    "title": "Welcome To My Blog",
-    "section": "",
-    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "YOUR NAME",
+    "title": "Dylan Rogers",
     "section": "",
-    "text": "Finley Malloc majors in Data Analytics at SUNY Geneseo. When not working on data analytics, Finley enjoys spending time unicycling and playing with her pet iguana."
+    "text": "Dylan Rogers majors in Mathematics and minors in Data Analytics at SUNY Geneseo. When not working on math or data analytics, Dylan enjoys spending time skiing and snowboarding with his friends."
   },
   {
     "objectID": "index.html#education",
     "href": "index.html#education",
-    "title": "YOUR NAME",
+    "title": "Dylan Rogers",
     "section": "Education",
-    "text": "Education\nState University of New York at Geneseo | Geneseo, NY  B.S. in Data Analytics | Aug 2022 - May 2026  Minor in Economics"
+    "text": "Education\nState University of New York at Geneseo | Geneseo, NY  B.A. in Mathematics | Aug 2022 - May 2026  Minor in Data Analytics"
   },
   {
     "objectID": "index.html#experience",
     "href": "index.html#experience",
-    "title": "YOUR NAME",
+    "title": "Dylan Rogers",
     "section": "Experience",
-    "text": "Experience\nStarbucks Analytics | Data Analyst Intern | May 2024 - Aug 2024"
+    "text": "Experience\nGlass and Glass Accounting Firm | Accounting Intern | September 2021 - May 2022\nLevinbook Law Firm PC | Law Intern | December 2023 - Present"
+  },
+  {
+    "objectID": "blog-listing.html",
+    "href": "blog-listing.html",
+    "title": "Insightful Analytics",
+    "section": "",
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\n\nJan 22, 2025\n\n\nYOUR NAME\n\n\n1 min\n\n\n\n\n\n\n\n\n\n\n\n\nStarwars\n\n\n\n\n\n\n\n\nJan 22, 2025\n\n\nYour Name\n\n\n3 min\n\n\n\n\n\n\n\n\n\n\n\n\nPost With Code\n\n\n\n\n\n\n\n\nJan 22, 2025\n\n\nYOUR NAME\n\n\n1 min\n\n\n\n\n\n\nNo matching items"
   }
 ]

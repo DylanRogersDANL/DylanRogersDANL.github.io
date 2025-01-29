@@ -1,5 +1,5 @@
 ---
-title: "YOUR NAME" 
+title: "Dylan Rogers" 
 about:
   template: trestles  # jolla  trestles  solana  marquee  broadside
   image: img/profile.png
@@ -9,7 +9,7 @@ about:
   links:
     - icon: linkedin
       text: LinkedIn
-      href: https://linkedin.com
+      href: https://www.linkedin.com/in/dylan-rogers-3917b0220/
     - icon: instagram
       text: Instagram
       href: https://instagram.com
@@ -18,25 +18,27 @@ about:
       href: https://github.com
     - icon: file-earmark-pdf
       text: Resumé
-      href: resume-example.pdf
+      href: Dylan Rogers Resume 12_31_24.pdf
       target: _blank
     - icon: mailbox
       text: Email
-      href: mailto:YOUR_EMAIL@geneseo.edu
+      href: mailto:dr99@geneseo.edu
 
 ---
 
 
-Finley Malloc majors in Data Analytics at SUNY Geneseo. When not working on data analytics, Finley enjoys spending time unicycling and playing with her pet iguana.
+Dylan Rogers majors in Mathematics and minors in Data Analytics at SUNY Geneseo. When not working on math or data analytics, Dylan enjoys spending time skiing and snowboarding with his friends.
 
 ## Education
 
 State University of New York at Geneseo | Geneseo, NY <br>
-B.S. in Data Analytics | Aug 2022 - May 2026 <br>
-Minor in Economics
+B.A. in Mathematics | Aug 2022 - May 2026 <br>
+Minor in Data Analytics
 
 ## Experience
 
-Starbucks Analytics | Data Analyst Intern | May 2024 - Aug 2024
+Glass and Glass Accounting Firm | Accounting Intern | September 2021 - May 2022
+
+Levinbook Law Firm PC | Law Intern | December 2023 - Present
 
 
