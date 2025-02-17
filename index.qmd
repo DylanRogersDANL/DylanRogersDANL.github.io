@@ -10,16 +10,12 @@ about:
     - icon: linkedin
       text: LinkedIn
       href: https://www.linkedin.com/in/dylan-rogers-3917b0220/
-    - icon: instagram
-      text: Instagram
-      href: https://instagram.com
-    - icon: github
-      text: GitHub
-      href: https://github.com
+      
     - icon: file-earmark-pdf
       text: Resumé
       href: Dylan Rogers Resume 12_31_24.pdf
       target: _blank
+      
     - icon: mailbox
       text: Email
       href: mailto:dr99@geneseo.edu

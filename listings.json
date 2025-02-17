@@ -2,6 +2,7 @@
   {
     "listing": "/blog-listing.html",
     "items": [
+      "/posts/Python Basics/index.html",
       "/posts/welcome/index.html",
       "/posts/starwars/starwars_df.html",
       "/posts/post-with-code/index.html"

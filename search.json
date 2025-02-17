@@ -137,6 +137,83 @@
     "href": "blog-listing.html",
     "title": "Insightful Analytics",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\n\nJan 22, 2025\n\n\nYOUR NAME\n\n\n1 min\n\n\n\n\n\n\n\n\n\n\n\n\nStarwars\n\n\n\n\n\n\n\n\nJan 22, 2025\n\n\nYour Name\n\n\n3 min\n\n\n\n\n\n\n\n\n\n\n\n\nPost With Code\n\n\n\n\n\n\n\n\nJan 22, 2025\n\n\nYOUR NAME\n\n\n1 min\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nPython Basics\n\n\n\n\n\n\n\n\nFeb 10, 2025\n\n\nDylan Rogers\n\n\n3 min\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\n\nJan 22, 2025\n\n\nYOUR NAME\n\n\n1 min\n\n\n\n\n\n\n\n\n\n\n\n\nStarwars\n\n\n\n\n\n\n\n\nJan 22, 2025\n\n\nYour Name\n\n\n3 min\n\n\n\n\n\n\n\n\n\n\n\n\nPost With Code\n\n\n\n\n\n\n\n\nJan 22, 2025\n\n\nYOUR NAME\n\n\n1 min\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/Python Basics/index.html",
+    "href": "posts/Python Basics/index.html",
+    "title": "Python Basics",
+    "section": "",
+    "text": "Python is a high-level, interpreted programming language. This is a simple Python code:\n\n\nCode\nprint(\"Hello, World!\")\n\n\nHello, World!\n\n\n\n\n\nIn Python, variables can store data of different types without explicitly declaring the type.\nFor example:\n\n\nCode\nintegerVariable = 10\nstringVariable = \"Hello\"\nfloatVariable = 10.5\n\nfloatVariable\n\n\n10.5\n\n\n\n\n\nPython supports the usual logical conditions from mathematics:\n\n\nCode\n# Equals: a == b\n# Not Equals: a != b\n# Less than: a &lt; b\n# Less than or equal to: a &lt;= b\n# Greater than: a &gt; b\n# Greater than or equal to: a &gt;= b\n\n\nThese conditions can be used in several ways, most commonly in ‘if statements’ and loops.\n\n\nCode\n# if statement:\nif(5 &gt; 2):\n    print(\"Five is greater than two!\")\n\n\nFive is greater than two!\n\n\n\n\n\nA function is a block of code which only runs when it is called.\nYou can pass data, known as parameters, into a function.\nA function can return data as a result.\n\n\nCode\n# Defining a function:\ndef myFunction():\n    print(\"Hello from a function\")\n\n# Calling a function:\nmyFunction()\n\n\nHello from a function\n\n\n\n\n\nA list is a collection which is ordered and changeable.\nA dictionary is a collection which is unordered, changeable and indexed.\n\n\nCode\n# List example:\nmyList = [\"apple\", \"banana\", \"cherry\"]\n\n# Dictionary example:\nmyDict = {\"name\": \"John\", \"age\": 36}\n\n\n\n\n\nAll operators that are shown below will work just as you would expect them to for numbers.\nThese operators are sometimes defined for other classes but not always\n\n\nCode\n# + is used for addition \n# - is used for subtraction\n# * is used for multiplication\n# ** is used for exponents\n# / is used for division\n# // is used for integer division\n\n\n\n\n\nSlicing allows you to get a substring of a string from 2 different points.\n\n\nCode\n# string[a:b] means that it starts at the index a and goes up to but not including index b\n# string[a:] means that it starts at the index a and goes all the way to the end\n# string[:b] means that it starts at the beginning and goes up to but not including index b\n# string[-a:] means that it will take the last a amount of letters\n# string[:-b] means that it will leave off the last b amount of letters\n\n# string[a:b:s] means the same thing as above except this time s is the step size, if you make s 2 it will go every other\n\n\n\n\n\n\n\nA while loop works as a conditional loop, so as long as the condition at the start is True, then the loop will run. The condition will always be given at the start of the loop and will be checked after each iteration.\n\n\nCode\nx = 1\nwhile(x &lt; 5):\n  print(x)\n  x += 1\n\n\n1\n2\n3\n4\n\n\nIn this loop we are counting up to 5 but since the condition is checked at the beginning, it will not run when x = 5\n\n\n\nA for loop is similar to a while loop in the fact that they both run until a condition has been met. Unlike a while loop, the for loop will automatically iterate for us. In order to get the for loop to iterate for us, we first need to give it something to iterate through. I will be using the numbers from 1-4.\n\n\nCode\nfor x in range(1, 5):\n  print(x)\n\n\n1\n2\n3\n4\n\n\n\n\n\n\nSometimes we don’t always get something that works, 4/0 will give you an error if you try to run the code because you can not divide by 0. Not just this in particular but in the same case you get an error you can use Try and Except in order to handle it.\n\n\nCode\na = 4\nb = 2\nc = 0\n\ntry:\n  print(\"a/b is\", a/b)\nexcept:\n  print(\"You can not divide by zero\")\n  \ntry:\n  print(\"a/c is\", a/c)\nexcept:\n  print(\"You can not divide by zero\")\n\n\na/b is 2.0\nYou can not divide by zero"
+  },
+  {
+    "objectID": "posts/Python Basics/index.html#introduction-to-python-1",
+    "href": "posts/Python Basics/index.html#introduction-to-python-1",
+    "title": "Python Basics",
+    "section": "",
+    "text": "Since this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts"
+  },
+  {
+    "objectID": "posts/Python Basics/index.html#what-is-python",
+    "href": "posts/Python Basics/index.html#what-is-python",
+    "title": "Python Basics",
+    "section": "",
+    "text": "Python is a high-level, interpreted programming language. This is a simple Python code:\n\n\nCode\nprint(\"Hello, World!\")\n\n\nHello, World!"
+  },
+  {
+    "objectID": "posts/Python Basics/index.html#variables-and-data-types",
+    "href": "posts/Python Basics/index.html#variables-and-data-types",
+    "title": "Python Basics",
+    "section": "",
+    "text": "In Python, variables can store data of different types without explicitly declaring the type.\nFor example:\n\n\nCode\nintegerVariable = 10\nstringVariable = \"Hello\"\nfloatVariable = 10.5\n\nfloatVariable\n\n\n10.5"
+  },
+  {
+    "objectID": "posts/Python Basics/index.html#control-structures",
+    "href": "posts/Python Basics/index.html#control-structures",
+    "title": "Python Basics",
+    "section": "",
+    "text": "Python supports the usual logical conditions from mathematics:\n\n\nCode\n# Equals: a == b\n# Not Equals: a != b\n# Less than: a &lt; b\n# Less than or equal to: a &lt;= b\n# Greater than: a &gt; b\n# Greater than or equal to: a &gt;= b\n\n\nThese conditions can be used in several ways, most commonly in ‘if statements’ and loops.\n\n\nCode\n# if statement:\nif(5 &gt; 2):\n    print(\"Five is greater than two!\")\n\n\nFive is greater than two!"
+  },
+  {
+    "objectID": "posts/Python Basics/index.html#functions",
+    "href": "posts/Python Basics/index.html#functions",
+    "title": "Python Basics",
+    "section": "",
+    "text": "A function is a block of code which only runs when it is called.\nYou can pass data, known as parameters, into a function.\nA function can return data as a result.\n\n\nCode\n# Defining a function:\ndef myFunction():\n    print(\"Hello from a function\")\n\n# Calling a function:\nmyFunction()\n\n\nHello from a function"
+  },
+  {
+    "objectID": "posts/Python Basics/index.html#lists-and-dictionaries",
+    "href": "posts/Python Basics/index.html#lists-and-dictionaries",
+    "title": "Python Basics",
+    "section": "",
+    "text": "A list is a collection which is ordered and changeable.\nA dictionary is a collection which is unordered, changeable and indexed.\n\n\nCode\n# List example:\nmyList = [\"apple\", \"banana\", \"cherry\"]\n\n# Dictionary example:\nmyDict = {\"name\": \"John\", \"age\": 36}"
+  },
+  {
+    "objectID": "posts/Python Basics/index.html#operators",
+    "href": "posts/Python Basics/index.html#operators",
+    "title": "Python Basics",
+    "section": "",
+    "text": "All operators that are shown below will work just as you would expect them to for numbers.\nThese operators are sometimes defined for other classes but not always\n\n\nCode\n# + is used for addition \n# - is used for subtraction\n# * is used for multiplication\n# ** is used for exponents\n# / is used for division\n# // is used for integer division"
+  },
+  {
+    "objectID": "posts/Python Basics/index.html#slicing",
+    "href": "posts/Python Basics/index.html#slicing",
+    "title": "Python Basics",
+    "section": "",
+    "text": "Slicing allows you to get a substring of a string from 2 different points.\n\n\nCode\n# string[a:b] means that it starts at the index a and goes up to but not including index b\n# string[a:] means that it starts at the index a and goes all the way to the end\n# string[:b] means that it starts at the beginning and goes up to but not including index b\n# string[-a:] means that it will take the last a amount of letters\n# string[:-b] means that it will leave off the last b amount of letters\n\n# string[a:b:s] means the same thing as above except this time s is the step size, if you make s 2 it will go every other"
+  },
+  {
+    "objectID": "posts/Python Basics/index.html#loops",
+    "href": "posts/Python Basics/index.html#loops",
+    "title": "Python Basics",
+    "section": "",
+    "text": "A while loop works as a conditional loop, so as long as the condition at the start is True, then the loop will run. The condition will always be given at the start of the loop and will be checked after each iteration.\n\n\nCode\nx = 1\nwhile(x &lt; 5):\n  print(x)\n  x += 1\n\n\n1\n2\n3\n4\n\n\nIn this loop we are counting up to 5 but since the condition is checked at the beginning, it will not run when x = 5\n\n\n\nA for loop is similar to a while loop in the fact that they both run until a condition has been met. Unlike a while loop, the for loop will automatically iterate for us. In order to get the for loop to iterate for us, we first need to give it something to iterate through. I will be using the numbers from 1-4.\n\n\nCode\nfor x in range(1, 5):\n  print(x)\n\n\n1\n2\n3\n4"
+  },
+  {
+    "objectID": "posts/Python Basics/index.html#handle-errors",
+    "href": "posts/Python Basics/index.html#handle-errors",
+    "title": "Python Basics",
+    "section": "",
+    "text": "Sometimes we don’t always get something that works, 4/0 will give you an error if you try to run the code because you can not divide by 0. Not just this in particular but in the same case you get an error you can use Try and Except in order to handle it.\n\n\nCode\na = 4\nb = 2\nc = 0\n\ntry:\n  print(\"a/b is\", a/b)\nexcept:\n  print(\"You can not divide by zero\")\n  \ntry:\n  print(\"a/c is\", a/c)\nexcept:\n  print(\"You can not divide by zero\")\n\n\na/b is 2.0\nYou can not divide by zero"
   }
 ]

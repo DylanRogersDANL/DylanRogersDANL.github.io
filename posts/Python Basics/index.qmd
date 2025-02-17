@@ -1,0 +1,148 @@
+---
+title: "Python Basics"
+author: "Dylan Rogers"
+date: "2025-02-10"
+categories: [Python]
+image: "PythonLogo.jpg"
+
+toc: true
+
+format:
+  html:
+    code-fold: true
+---
+
+# Introduction to Python
+
+
+## What is Python?
+Python is a high-level, interpreted programming language. This is a simple Python code:
+```{python}
+print("Hello, World!")
+```
+
+
+## Variables and Data Types
+In Python, variables can store data of different types without explicitly declaring the type.
+
+For example:
+```{python}
+integerVariable = 10
+stringVariable = "Hello"
+floatVariable = 10.5
+
+floatVariable
+```
+
+
+## Control Structures
+Python supports the usual logical conditions from mathematics:
+```{python}
+# Equals: a == b
+# Not Equals: a != b
+# Less than: a < b
+# Less than or equal to: a <= b
+# Greater than: a > b
+# Greater than or equal to: a >= b
+```
+These conditions can be used in several ways, most commonly in ‘if statements’ and loops.
+```{python}
+# if statement:
+if(5 > 2):
+    print("Five is greater than two!")
+```
+
+
+## Functions
+A function is a block of code which only runs when it is called.
+
+You can pass data, known as parameters, into a function.
+
+A function can return data as a result.
+```{python}
+# Defining a function:
+def myFunction():
+    print("Hello from a function")
+
+# Calling a function:
+myFunction()
+```
+
+
+## Lists and Dictionaries
+A list is a collection which is ordered and changeable.
+
+A dictionary is a collection which is unordered, changeable and indexed.
+```{python}
+# List example:
+myList = ["apple", "banana", "cherry"]
+
+# Dictionary example:
+myDict = {"name": "John", "age": 36}
+```
+
+## Operators
+All operators that are shown below will work just as you would expect them to for numbers.
+
+These operators are sometimes defined for other classes but not always
+```{python}
+# + is used for addition 
+# - is used for subtraction
+# * is used for multiplication
+# ** is used for exponents
+# / is used for division
+# // is used for integer division
+```
+
+
+## Slicing
+Slicing allows you to get a substring of a string from 2 different points.
+```{python}
+# string[a:b] means that it starts at the index a and goes up to but not including index b
+# string[a:] means that it starts at the index a and goes all the way to the end
+# string[:b] means that it starts at the beginning and goes up to but not including index b
+# string[-a:] means that it will take the last a amount of letters
+# string[:-b] means that it will leave off the last b amount of letters
+
+# string[a:b:s] means the same thing as above except this time s is the step size, if you make s 2 it will go every other
+```
+
+
+## Loops
+
+### While Loop
+A while loop works as a conditional loop, so as long as the condition at the start is True, then the loop will run. The condition will always be given at the start of the loop and will be checked after each iteration.
+```{python}
+x = 1
+while(x < 5):
+  print(x)
+  x += 1
+```
+In this loop we are counting up to 5 but since the condition is checked at the beginning, it will not run when x = 5
+
+### For Loop
+A for loop is similar to a while loop in the fact that they both run until a condition has been met. Unlike a while loop, the for loop will automatically iterate for us.
+In order to get the for loop to iterate for us, we first need to give it something to iterate through. I will be using the numbers from 1-4.
+```{python}
+for x in range(1, 5):
+  print(x)
+```
+
+
+## Handle Errors
+Sometimes we don't always get something that works, 4/0 will give you an error if you try to run the code because you can not divide by 0. Not just this in particular but in the same case you get an error you can use Try and Except in order to handle it.
+```{python}
+a = 4
+b = 2
+c = 0
+
+try:
+  print("a/b is", a/b)
+except:
+  print("You can not divide by zero")
+  
+try:
+  print("a/c is", a/c)
+except:
+  print("You can not divide by zero")
+```
