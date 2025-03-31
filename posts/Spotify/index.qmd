@@ -1,0 +1,80 @@
+---
+title: "Spotify"
+author: "Dylan Rogers"
+date: "2025-03-30"
+categories: [Spotify, Music]
+image: "SpotifyLogo.png"
+
+toc: true
+---
+
+# Spotify
+
+## How to use the Spotify DataFrame
+
+Just like all starts with DataFrames, we first need to import Pandas. Now that we have the Pandas library, we can now start using DataFrames, I will assign the data containing of Spotify users' playlist information to a variable called Spotify.
+
+```{python}
+import pandas as pd
+spotify = pd.read_csv("https://bcdanl.github.io/data/spotify_all.csv")
+spotify
+```
+
+## Navigating the DataFrame
+
+Since I'm going to want to find my favorite artists in this DataFrame, I'm first going to need to see if my favorites are in it. In order to do that, you can use the code below, with switching the "_____" for your favorite arstist's first and last name.
+
+```{python}
+spotify[spotify["artist_name"] == "_____"]
+```
+
+## Looking for my favorite artists
+
+I'm not the biggest fan of any particular artists. I generally would be fine with listening to a combonation of any genres or artists. Lately however, I have been getting into a Country Music phase. Of these artists that I've most recently listened to, I would have to say my favorites are Luke Bryan, and Luke Combs.
+
+```{python}
+spotify[spotify["artist_name"] == "Luke Bryan"]
+spotify[spotify["artist_name"] == "Luke Combs"]
+```
+
+After seeing that each of these artists are in the DataFrame, we can now look at them individually.
+
+Before we do that, we are going to switch the index to the artist to make it easier for us when looking at them individually.
+
+```{python}
+spotify = spotify.set_index("artist_name")
+```
+
+### Luke Bryan
+
+In order to look at Luke Bryan's songs within this DataFrame, we will create a new DataFrame of his songs only. Next we will look at how many songs of his are in the DataFrame. We will also look at how many of his albums have made it into the DataFrame as well. We can also find out the average time length of these songs. In order to do that, we need to get the time in milliseconds, and then convert it into minutes, rounding down. After we get the conversion, we take the remainder and convert that into seconds.
+
+```{python}
+LukeBryan = spotify.loc["Luke Bryan"]
+numberOfSongs = LukeBryan["track_name"].nunique()
+numberOfAlbums = LukeBryan["album_name"].nunique()
+averageSongLengthInMS = float(LukeBryan["duration_ms"].mean())
+averageSongLengthOfMins = int(averageSongLengthInMS / 60000)
+averageSongLengthOfSecs = int(((averageSongLengthInMS / 60000) - averageSongLengthOfMins) * 60)
+averageSongLength = str(averageSongLengthOfMins) + ":" + str(averageSongLengthOfSecs)
+print("In this DataFrame, Luke Bryan has", numberOfSongs, "songs, from", numberOfAlbums, "albums. Their songs average", averageSongLength)
+```
+
+Using this code, we have found that 73 of Luke Bryan's songs are in this DataFrame, as well as 11 of his albums. The average time length of his songs are 3:36.
+
+### Luke Combs
+
+Next we will be doing the same with Luke Combs. Everything will be the same, expect this time we will use Luke Combs, instead of Luke Bryan.
+
+```{python}
+LukeCombs = spotify.loc["Luke Combs"]
+numberOfSongs = LukeCombs["track_name"].nunique()
+numberOfAlbums = LukeCombs["album_name"].nunique()
+averageSongLengthInMS = float(LukeCombs["duration_ms"].mean())
+averageSongLengthOfMins = int(averageSongLengthInMS / 60000)
+averageSongLengthOfSecs = int(((averageSongLengthInMS / 60000) - averageSongLengthOfMins) * 60)
+averageSongLength = str(averageSongLengthOfMins) + ":" + str(averageSongLengthOfSecs)
+print("In this DataFrame, Luke Combs has", numberOfSongs, "songs, from", numberOfAlbums, "albums. Their songs average", averageSongLength)
+```
+
+Using this code, we have found that only 10 of Luke Combs' songs are in this DataFrame, as well as 4 of his albums. The average time length of his songs are 3:36.
