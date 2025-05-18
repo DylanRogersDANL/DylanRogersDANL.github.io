@@ -137,7 +137,7 @@
     "href": "blog-listing.html",
     "title": "Insightful Analytics",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nSpotify\n\n\n\n\n\n\n\n\nMar 30, 2025\n\n\nDylan Rogers\n\n\n3 min\n\n\n\n\n\n\n\n\n\n\n\n\nPython Basics\n\n\n\n\n\n\n\n\nFeb 10, 2025\n\n\nDylan Rogers\n\n\n3 min\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\n\nJan 22, 2025\n\n\nYOUR NAME\n\n\n1 min\n\n\n\n\n\n\n\n\n\n\n\n\nStarwars\n\n\n\n\n\n\n\n\nJan 22, 2025\n\n\nYour Name\n\n\n3 min\n\n\n\n\n\n\n\n\n\n\n\n\nPost With Code\n\n\n\n\n\n\n\n\nJan 22, 2025\n\n\nYOUR NAME\n\n\n1 min\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nSpotify\n\n\n\n\n\n\n\n\nMar 30, 2025\n\n\nDylan Rogers\n\n\n3 min\n\n\n\n\n\n\n\n\n\n\n\n\nFinal Project\n\n\n\n\n\n\n\n\nMar 30, 2025\n\n\nDylan Rogers\n\n\n3 min\n\n\n\n\n\n\n\n\n\n\n\n\nPython Basics\n\n\n\n\n\n\n\n\nFeb 10, 2025\n\n\nDylan Rogers\n\n\n3 min\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\n\nJan 22, 2025\n\n\nYOUR NAME\n\n\n1 min\n\n\n\n\n\n\n\n\n\n\n\n\nStarwars\n\n\n\n\n\n\n\n\nJan 22, 2025\n\n\nYour Name\n\n\n3 min\n\n\n\n\n\n\n\n\n\n\n\n\nPost With Code\n\n\n\n\n\n\n\n\nJan 22, 2025\n\n\nYOUR NAME\n\n\n1 min\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/Python Basics/index.html",
@@ -320,5 +320,40 @@
     "title": "Spotify",
     "section": "",
     "text": "Next we will be doing the same with Luke Combs. Everything will be the same, expect this time we will use Luke Combs, instead of Luke Bryan.\n\nLukeCombs = spotify.loc[\"Luke Combs\"]\nnumberOfSongs = LukeCombs[\"track_name\"].nunique()\nnumberOfAlbums = LukeCombs[\"album_name\"].nunique()\naverageSongLengthInMS = float(LukeCombs[\"duration_ms\"].mean())\naverageSongLengthOfMins = int(averageSongLengthInMS / 60000)\naverageSongLengthOfSecs = int(((averageSongLengthInMS / 60000) - averageSongLengthOfMins) * 60)\naverageSongLength = str(averageSongLengthOfMins) + \":\" + str(averageSongLengthOfSecs)\nprint(\"In this DataFrame, Luke Combs has\", numberOfSongs, \"songs, from\", numberOfAlbums, \"albums. Their songs average\", averageSongLength)\n\nIn this DataFrame, Luke Combs has 10 songs, from 4 albums. Their songs average 3:38\n\n\nUsing this code, we have found that only 10 of Luke Combs’ songs are in this DataFrame, as well as 4 of his albums. The average time length of his songs are 3:36."
+  },
+  {
+    "objectID": "posts/Final Project/index.html",
+    "href": "posts/Final Project/index.html",
+    "title": "Final Project",
+    "section": "",
+    "text": "In recent years, Environmental, Social, and Governance (ESG) has been on an uprise throughout the financial world. Companies have been using these metrics to show off their commitment towards helping the planet against Climate Change.\nUsing the data given from Yahoo Finance, we can look at the trend over time and see what changes. Since the stock market can vary a lot from day to day, we will look at the companies data from January 1st, 2024, to March 31st, 2025.\nTogether we will look at how much fighting against Climate Change will do for the company, and if they either lose more money by doing this, or if they even benefit by doing this and make more money.\n\n\n\nIn order to use the data we need from Yahoo Finance, we will get it using the Selenium Library in python. The first thing I did was, grab the symbol for each stock from our DataFrame given and use that in the Yahoo Finance URL in order to get that particular stocks information. On that page I used inspect to find the XPath for each of the ESG’s Risk Scores. Now that we have our Risk Scores, we need to grab the stocks history using the company’s history page on Yahoo Finance.\nIn order to do this, I used a different URL but still replaced the symbol for each stock in the URL, similar to before but on the company’s history page. After arriving on this page, I started to go through the table and get the data from each of the rows. Every once and a while I would get stuck because of the dividends for the company. When I got to the dividends, I created a new DataFrame that will hold the information of each of the companies dividends.\n\n\n\nThis project aims to look at the relationship between the Stocks ESG scores and the Stock Price. I chose to look at this data using a scatter plot and a linear regression line to the first degree. The scatter plot didn’t show much as there was a lot of back and forth going up and down, so I wanted to look at the linear regression line to see more in depth. After looking at the linear regression line, I was able to come to the conclusion that as the ESG Score decreases, the Stock Price increases. This means that the ESG Scores does not benefit towards the Stock Price and that fighting climate change might help the enviornment, but it doesn’t help the companies themself.\n\n\n\nYahoo Finance: Used to gather the information for both ESG Scores, and the stock prices during the durtion. This was also used in determining the prices at their high, low, open, close, etc."
+  },
+  {
+    "objectID": "posts/Final Project/index.html#background-and-statement-of-the-probelm",
+    "href": "posts/Final Project/index.html#background-and-statement-of-the-probelm",
+    "title": "Final Project",
+    "section": "",
+    "text": "In recent years, Environmental, Social, and Governance (ESG) has been on an uprise throughout the financial world. Companies have been using these metrics to show off their commitment towards helping the planet against Climate Change.\nUsing the data given from Yahoo Finance, we can look at the trend over time and see what changes. Since the stock market can vary a lot from day to day, we will look at the companies data from January 1st, 2024, to March 31st, 2025.\nTogether we will look at how much fighting against Climate Change will do for the company, and if they either lose more money by doing this, or if they even benefit by doing this and make more money."
+  },
+  {
+    "objectID": "posts/Final Project/index.html#data-collection",
+    "href": "posts/Final Project/index.html#data-collection",
+    "title": "Final Project",
+    "section": "",
+    "text": "In order to use the data we need from Yahoo Finance, we will get it using the Selenium Library in python. The first thing I did was, grab the symbol for each stock from our DataFrame given and use that in the Yahoo Finance URL in order to get that particular stocks information. On that page I used inspect to find the XPath for each of the ESG’s Risk Scores. Now that we have our Risk Scores, we need to grab the stocks history using the company’s history page on Yahoo Finance.\nIn order to do this, I used a different URL but still replaced the symbol for each stock in the URL, similar to before but on the company’s history page. After arriving on this page, I started to go through the table and get the data from each of the rows. Every once and a while I would get stuck because of the dividends for the company. When I got to the dividends, I created a new DataFrame that will hold the information of each of the companies dividends."
+  },
+  {
+    "objectID": "posts/Final Project/index.html#signifigance-of-the-project",
+    "href": "posts/Final Project/index.html#signifigance-of-the-project",
+    "title": "Final Project",
+    "section": "",
+    "text": "This project aims to look at the relationship between the Stocks ESG scores and the Stock Price. I chose to look at this data using a scatter plot and a linear regression line to the first degree. The scatter plot didn’t show much as there was a lot of back and forth going up and down, so I wanted to look at the linear regression line to see more in depth. After looking at the linear regression line, I was able to come to the conclusion that as the ESG Score decreases, the Stock Price increases. This means that the ESG Scores does not benefit towards the Stock Price and that fighting climate change might help the enviornment, but it doesn’t help the companies themself."
+  },
+  {
+    "objectID": "posts/Final Project/index.html#references",
+    "href": "posts/Final Project/index.html#references",
+    "title": "Final Project",
+    "section": "",
+    "text": "Yahoo Finance: Used to gather the information for both ESG Scores, and the stock prices during the durtion. This was also used in determining the prices at their high, low, open, close, etc."
   }
 ]

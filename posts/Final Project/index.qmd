@@ -1,0 +1,33 @@
+---
+title: "Final Project"
+author: "Dylan Rogers"
+date: "2025-03-30"
+categories: [Final, Stocks, ESG]
+image: "GlobeLogo.png"
+
+toc: true
+---
+
+# Unifying ESG Metrics with Financial Analysis
+
+## Background and Statement of the probelm
+
+In recent years, Environmental, Social, and Governance (ESG) has been on an uprise throughout the financial world. Companies have been using these metrics to show off their commitment towards helping the planet against Climate Change.
+
+Using the data given from Yahoo Finance, we can look at the trend over time and see what changes. Since the stock market can vary a lot from day to day, we will look at the companies data from January 1st, 2024, to March 31st, 2025.
+
+Together we will look at how much fighting against Climate Change will do for the company, and if they either lose more money by doing this, or if they even benefit by doing this and make more money.
+
+## Data Collection
+
+In order to use the data we need from Yahoo Finance, we will get it using the Selenium Library in python. The first thing I did was, grab the symbol for each stock from our DataFrame given and use that in the Yahoo Finance URL in order to get that particular stocks information. On that page I used inspect to find the XPath for each of the ESG's Risk Scores. Now that we have our Risk Scores, we need to grab the stocks history using the company's history page on Yahoo Finance.
+
+In order to do this, I used a different URL but still replaced the symbol for each stock in the URL, similar to before but on the company's history page. After arriving on this page, I started to go through the table and get the data from each of the rows. Every once and a while I would get stuck because of the dividends for the company. When I got to the dividends, I created a new DataFrame that will hold the information of each of the companies dividends.
+
+## Signifigance of the Project
+
+This project aims to look at the relationship between the Stocks ESG scores and the Stock Price. I chose to look at this data using a scatter plot and a linear regression line to the first degree. The scatter plot didn't show much as there was a lot of back and forth going up and down, so I wanted to look at the linear regression line to see more in depth. After looking at the linear regression line, I was able to come to the conclusion that as the ESG Score decreases, the Stock Price increases. This means that the ESG Scores does not benefit towards the Stock Price and that fighting climate change might help the enviornment, but it doesn't help the companies themself.
+
+## References
+
+Yahoo Finance: Used to gather the information for both ESG Scores, and the stock prices during the durtion. This was also used in determining the prices at their high, low, open, close, etc.
