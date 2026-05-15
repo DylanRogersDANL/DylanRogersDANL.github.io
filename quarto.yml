@@ -20,11 +20,9 @@ website:
             href: pandas_basics.ipynb
           - text: Seaborn Basic
             href: seaborn_basics.ipynb
-          # - text: Final Project
-          #   href: 
-          
+            
       - text: "Story Telling Project"
-        href: StoryTelling.qmd
+        href: Story Telling Project.qmd
             
   page-footer: 
     center: "Powered with GitHub, Quarto, and Jupyter Notebook<br>© Dylan Rogers, 2025"

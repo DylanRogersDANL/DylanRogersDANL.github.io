@@ -1,0 +1,12 @@
+"GameID","Season","SeasonType","Day","DateTime","Status","HomeTeamID","HomeTeam","AwayTeamID","AwayTeam","HomeGoaltender.PlayerID","HomeGoaltender.TeamID","HomeGoaltender.Team","HomeGoaltender.FirstName","HomeGoaltender.LastName","HomeGoaltender.Jersey","HomeGoaltender.Confirmed","AwayGoaltender.PlayerID","AwayGoaltender.TeamID","AwayGoaltender.Team","AwayGoaltender.FirstName","AwayGoaltender.LastName","AwayGoaltender.Jersey","AwayGoaltender.Confirmed"
+24932,2026,1,"2026-03-03T00:00:00","2026-03-03T19:00:00","Final",16,"CBJ",21,"NAS",30005049,16,CBJ,Jet,Greaves,39,TRUE,30004161,21,NAS,Justus,Annunen,15,TRUE
+24933,2026,1,"2026-03-03T00:00:00","2026-03-03T19:00:00","Final",15,"WAS",41,"UTA",30003973,15,WAS,Logan,Thompson,26,TRUE,30004957,41,UTA,Karel,Vejmelka,37,TRUE
+24934,2026,1,"2026-03-03T00:00:00","2026-03-03T19:00:00","Final",10,"NJ", 8,"FLA",30000573,10,NJ,Jacob,Markstrom,13,TRUE,30000667, 8,FLA,Sergei,Bobrovsky,38,TRUE
+24935,2026,1,"2026-03-03T00:00:00","2026-03-03T19:00:00","Final", 2,"BUF",35,"VEG",30003074, 2,BUF,Alex,Lyon,18,TRUE,30004341,35,VEG,Akira,Schmid,21,TRUE
+24936,2026,1,"2026-03-03T00:00:00","2026-03-03T19:00:00","Final", 1,"BOS",14,"PIT",30003991, 1,BOS,Jeremy,Swayman, 0,TRUE,30003729,14,PIT,Stuart,Skinner,39,TRUE
+24937,2026,1,"2026-03-03T00:00:00","2026-03-03T20:00:00","F/OT",22,"WPG",17,"CHI",30000801,22,WPG,Connor,Hellebuyck,20,TRUE,30004494,17,CHI,Spencer,Knight,16,TRUE
+24938,2026,1,"2026-03-03T00:00:00","2026-03-03T21:00:00","F/OT",25,"EDM", 5,"OTT",30002787,25,EDM,Connor,Ingram,21,TRUE,30001374, 5,OTT,Linus,Ullmark,19,TRUE
+24939,2026,1,"2026-03-03T00:00:00","2026-03-03T21:00:00","Final",24,"CGY",18,"DAL",30004665,24,CGY,Dustin,Wolf,17,TRUE,30003376,18,DAL,Casey,DeSmith, 0,TRUE
+24940,2026,1,"2026-03-03T00:00:00","2026-03-03T21:30:00","Final",23,"MIN", 6,"TB",30003173,23,MIN,Filip,Gustavsson,17,TRUE,30001377, 6,TB,Andrei,Vasilevskiy,47,TRUE
+24941,2026,1,"2026-03-03T00:00:00","2026-03-03T22:00:00","Final",30,"ANA",19,"COL",30004160,30,ANA,Lukas,Dostal, 0,TRUE,30000200,19,COL,Scott,Wedgewood,22,TRUE
+24942,2026,1,"2026-03-03T00:00:00","2026-03-03T22:00:00","Final",27,"SJ", 4,"MON",30005628,27,SJ,Yaroslav,Askarov,16,TRUE,30005534, 4,MON,Jakub,Dobes,40,TRUE

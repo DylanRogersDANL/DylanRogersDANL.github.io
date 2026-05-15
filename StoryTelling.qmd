@@ -1,0 +1,115 @@
+---
+title: "Predicting The NHL"
+format: html
+---
+
+# Test 1
+
+## Test 2
+
+### Test 3
+
+
+## What can NHL Data be useful for?
+NHL data can look confusing when you first look at it. Together we will work
+on understanding it, but what can this information help us with? Together we
+will use this data to predict which team is more likely to win in a given game, 
+as well as predicting which players are more likely to get at least one point in
+that game.
+
+```{R}
+#| echo: false
+#| output: false
+
+library(httr)
+library(jsonlite)
+library(dplyr)
+library(knitr)
+
+getAPI <- function(url)
+{
+    response <- GET(url)
+    raw_json <- content(response, "text", encoding = "UTF-8")
+    data <- fromJSON(raw_json)
+    return(data)
+}
+
+thisYear <- as.data.frame(getAPI("https://api.nhle.com/stats/rest/en/skater/summary?limit=-1&start=17&sort=points&cayenneExp=seasonId=20252026"))
+lastYear <- as.data.frame(getAPI("https://api.nhle.com/stats/rest/en/skater/summary?limit=-1&start=17&sort=points&cayenneExp=seasonId=20242025"))
+names(thisYear) <- sub("^data\\.", "", names(thisYear))
+names(lastYear) <- sub("^data\\.", "", names(lastYear))
+injuries <- as.data.frame(getAPI("https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/injuries")$injuries)
+injuriesDF <- as.data.frame(injuries[, 2])
+injuriesDF[, 2] <- "data.frame()"
+colnames(injuriesDF) <- c("Team", "Injuries")
+teamInjury <- as.data.frame(injuries[1, 3])
+startingGoalies <- read.csv("Starting Goalies.csv")
+
+results <- fromJSON("All Results.json")
+results <- as.data.frame(results)[, -1:-3]
+results <- filter(results, results$date == "2026-03-10")[[2]][[1]]
+results <- results |>
+  select(-allHomePoints, -allAwayPoints)
+
+metrics <- fromJSON("All Results.json")
+metrics <- as.data.frame(metrics)[1, 1:3]
+
+
+```
+## Where does the data come from?
+ - Player Stats (NHL API)
+   - The first dataframe are the player stats from the previous season
+   - The second dataframe is for the current season
+```{R}
+#| echo: false
+   kable(head(lastYear, 10))
+   kable(head(thisYear, 10))
+```
+ - Injuries (ESPN API)
+   - The first dataframe contains all of the information for each teams injuries
+   - The second dataframe is everything for each players injuries that are on that team
+     - In this case the Anaheim Ducks
+```{R}
+#| echo: false
+#| warning: false
+   kable(injuriesDF)
+   kable(teamInjury)
+```
+ - Starting Goalies (Sports Data IO Starting Goalies API)
+   - These are the starting goalies for games March 3rd 2026
+```{R}
+#| echo: false
+  kable(startingGoalies)
+```
+
+## What happened next?
+After I gathered all of the necessary data, I had to clean it up. Since this is a lot of data coming from a bunch of different players, I needed to seperate the players that I wanted from what I didn't want. I then had to make sure that I had all of the right data for each of these players. With all of the needed data, I was able to compute different features. Below is a section of my results.
+```{R}
+#| echo: false
+   kable(head(results))
+```
+As you can see, there are some values that are not filled in. When a goalie is not filled in, that just means that the goalie for that team has not been confirmed yet. Sometimes like in this case, up until the game, the API that I was using, have not confirmed a goalie yet. In addition to the goalies, the scorers might also have missing values. The reason those occur here is because only players at a certain threshold for expected points will be selected, and in that case, no players have met that threshold.
+
+## What are the results?
+```{R}
+#| echo: false
+   kable(head(metrics))
+```
+From the table above, throughout the 2025-26 NHL Season, we have looked at 1,594 different predictions between both player points, and teams winning games. Of those 1,594 predictions, we have gotten 896 of them correct. This gives us 896/1,594 = 56.21%.
+
+## What does this mean?
+From the metrics table above, we can determine that the model is not perfect. Even though it might not be strong at predictions, it can still be a helpful tool that can be used. There are many people out there, including me, that are trying to come up with ways that will beat other models, and only time will tell if anything will be accurate. The reasons that it's normal to not have as high of an accuracy, is because there is noise with the data. Since the data is coming from sports, we have human error included. This makes looking at the data harder than usual. In the future I would like to work more on this, and be able to have a higher accuracy than I previously had.
+
+## Give it a try!!
+ - Step 1. Select a home team
+ - Step 2. Select an away team
+ - Optional Step 3. Select a goalie to play
+ - Optional Step 4. Select an away goalie to play
+ - Step 5. Click "Run Simulation"
+
+<iframe 
+  src="https://rogersdylan1027.shinyapps.io/game_simulator/" 
+  width="100%" 
+  height="900px" 
+  style="border: none;">
+</iframe>
