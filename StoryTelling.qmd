@@ -3,13 +3,6 @@ title: "Predicting The NHL"
 format: html
 ---
 
-# Test 1
-
-## Test 2
-
-### Test 3
-
-
 ## What can NHL Data be useful for?
 NHL data can look confusing when you first look at it. Together we will work
 on understanding it, but what can this information help us with? Together we
