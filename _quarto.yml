@@ -23,8 +23,8 @@ website:
           # - text: Final Project
           #   href: 
           
-      - text: "Story Telling Project"
-        href: StoryTelling.html
+      - text: "Story Telling Project test"
+        href: StoryTelling.qmd
             
   page-footer: 
     center: "Powered with GitHub, Quarto, and Jupyter Notebook<br>© Dylan Rogers, 2025"
