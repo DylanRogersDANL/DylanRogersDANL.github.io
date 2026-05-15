@@ -22,7 +22,7 @@ website:
             href: seaborn_basics.ipynb
             
       - text: "Story Telling Project"
-        href: Story Telling Project.qmd
+        href: StoryTelling.qmd
             
   page-footer: 
     center: "Powered with GitHub, Quarto, and Jupyter Notebook<br>© Dylan Rogers, 2025"
