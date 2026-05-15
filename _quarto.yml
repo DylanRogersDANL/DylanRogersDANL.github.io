@@ -23,7 +23,7 @@ website:
           # - text: Final Project
           #   href: 
           
-      - text: "Story Telling Project test"
+      - text: "Story Telling Project"
         href: StoryTelling.qmd
             
   page-footer: 
