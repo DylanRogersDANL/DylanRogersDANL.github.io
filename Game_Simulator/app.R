@@ -685,12 +685,12 @@ server <- function(input, output, session) {
     
     output$home_points <- renderTable({
       if(length(result$allHomePoints) == 0) {
-        return(data.frame(Player = character(), Score = numeric(), Probability = character()))
+        return(data.frame(Player = character(), XP = numeric(), Probability = character()))
       }
       
       data.frame(
         Player = names(result$allHomePoints),
-        Score = sapply(result$allHomePoints, function(x) x[1]),
+        "Expected_Points" = sapply(result$allHomePoints, function(x) x[1]),
         Probability = sapply(result$allHomePoints, function(x) x[2]),
         row.names = NULL
       )
@@ -698,12 +698,12 @@ server <- function(input, output, session) {
     
     output$away_points <- renderTable({
       if(length(result$allAwayPoints) == 0) {
-        return(data.frame(Player = character(), Score = numeric(), Probability = character()))
+        return(data.frame(Player = character(), XP = numeric(), Probability = character()))
       }
       
       data.frame(
         Player = names(result$allAwayPoints),
-        Score = sapply(result$allAwayPoints, function(x) x[1]),
+        "Expected_Points" = sapply(result$allAwayPoints, function(x) x[1]),
         Probability = sapply(result$allAwayPoints, function(x) x[2]),
         row.names = NULL
       )
